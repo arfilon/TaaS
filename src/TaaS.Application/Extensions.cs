@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using System;
 using TaaS;
 using TaaS.Providers;
@@ -14,7 +15,9 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.AddTenantServiceProxy<System.Diagnostics.DiagnosticSource>();
             services.AddTenantServiceProxy<System.Diagnostics.DiagnosticListener>();
-
+            services.AddTenantServiceProxy<Microsoft.Extensions.Hosting.IHostEnvironment>();
+            services.AddTenantServiceProxy<Microsoft.AspNetCore.Hosting.IWebHostEnvironment>();
+            
             services.AddTenantServiceProvider<AspNetCore.Mvc.ApplicationParts.ApplicationPartManager, ApplicationPartManagerProvider>();
             services.AddTenantServiceProvider<AspNetCore.Builder.IApplicationBuilder, TenantApplicationProvider>();
 
@@ -25,6 +28,9 @@ namespace Microsoft.Extensions.DependencyInjection
                 s.AddLogging();
                 s.AddOptions();
                 s.AddSingleton(tenant);
+
+                var mang = new ApplicationPartManager();
+                s.AddSingleton<ApplicationPartManager>(mang);
             });
             return services;
         }
