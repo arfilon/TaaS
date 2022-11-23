@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace TaaS.Providers
+namespace Arfilon.TaaS.Providers
 {
 
      class ApplicationPartManagerProvider : ITenantServiceProvider<ApplicationPartManager>

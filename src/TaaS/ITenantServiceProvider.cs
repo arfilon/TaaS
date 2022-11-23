@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TaaS
+namespace Arfilon.TaaS
 {
     public interface ITenantServiceProvider<TService>
     {

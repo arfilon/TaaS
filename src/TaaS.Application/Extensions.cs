@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using System;
-using TaaS;
-using TaaS.Providers;
+using Arfilon.TaaS;
+using Arfilon.TaaS.Providers;
 
 namespace Microsoft.Extensions.DependencyInjection
 {

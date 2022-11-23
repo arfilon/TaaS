@@ -1,7 +1,7 @@
-﻿using TaaS;
+﻿using Arfilon.TaaS;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using TaaS.Providers;
+using Arfilon.TaaS.Providers;
 
 namespace Microsoft.Extensions.DependencyInjection
 {

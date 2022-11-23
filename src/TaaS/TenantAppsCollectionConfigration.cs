@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace TaaS
+namespace Arfilon.TaaS
 {
     public delegate void TenentServiceBuilder(IServiceCollection services, TenantKey tenant);
     internal class TenantAppsCollectionConfigration

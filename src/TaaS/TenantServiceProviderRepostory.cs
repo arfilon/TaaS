@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace TaaS
+namespace Arfilon.TaaS
 {
     public class TenantServiceProviderRepostory
     {

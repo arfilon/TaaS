@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32126.315
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaaS", "TaaS\TaaS.csproj", "{6CC67882-08B4-4400-A109-EA4A3647D00E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arfilon.TaaS", "TaaS\Arfilon.TaaS.csproj", "{6CC67882-08B4-4400-A109-EA4A3647D00E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{FBCEBE51-6390-49C6-A3D4-D378F0C0FF77}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaaS.Application", "TaaS.Application\TaaS.Application.csproj", "{DD4B9368-71E2-4D83-ABE7-79559AD491A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arfilon.TaaS.Application", "TaaS.Application\Arfilon.TaaS.Application.csproj", "{DD4B9368-71E2-4D83-ABE7-79559AD491A4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataSurce", "Samples\DataSurce\DataSurce.csproj", "{7829D6BA-E048-41CB-BDA8-60AF47EC488C}"
 EndProject

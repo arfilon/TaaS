@@ -1,4 +1,4 @@
-﻿namespace TaaS
+﻿namespace Arfilon.TaaS
 {
     public class TenantNotFoundException : System.Exception
     {

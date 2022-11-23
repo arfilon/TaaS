@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace TaaS.Providers
+namespace Arfilon.TaaS.Providers
 {
     class TenantApplicationProvider : ITenantServiceProvider<IApplicationBuilder>
     {

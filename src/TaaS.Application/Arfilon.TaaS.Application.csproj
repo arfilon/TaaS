@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Title>Tenant as a Service (TaaS)</Title>
+		<Title>Tenant as a Service (Arfilon.TaaS)</Title>
 		<Authors>Mohammad Saleem</Authors>
 		<Company>Arfilon Solutions</Company>
 		<Product>TaaS</Product>
@@ -20,7 +20,7 @@ Convert your application to SaaS or multi-tenant</Description>
 	</ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TaaS\TaaS.csproj" />
+    <ProjectReference Include="..\TaaS\Arfilon.TaaS.csproj" />
   </ItemGroup>
 
 </Project>

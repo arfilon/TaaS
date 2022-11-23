@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
-using TaaS;
+using Arfilon.TaaS;
 
 namespace HelloWorld
 {
-    internal class TenantSelector : TaaS.ITenantSelector
+    internal class TenantSelector : Arfilon.TaaS.ITenantSelector
     {
         public TenantKey GetCurrentTenant(HttpContext httpContext)
         {

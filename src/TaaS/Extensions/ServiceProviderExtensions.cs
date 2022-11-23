@@ -1,4 +1,4 @@
-﻿using TaaS;
+﻿using Arfilon.TaaS;
 namespace System
 {
     public static class ServiceProviderExtensions
@@ -9,7 +9,7 @@ namespace System
         }
         public static object GetServiceForTenant(this System.IServiceProvider provider, Type type, TenantKey tenant)
         {
-            var tenantServiceProviderRepostory = (TenantServiceProviderRepostory)provider.GetService(typeof(TenantServiceProviderRepostory)) ?? throw new System.InvalidOperationException("this not valid TaaS Provider consider using .AddTaaS()");
+            var tenantServiceProviderRepostory = (TenantServiceProviderRepostory)provider.GetService(typeof(TenantServiceProviderRepostory)) ?? throw new System.InvalidOperationException("this not valid Arfilon.TaaS Provider consider using .AddTaaS()");
             return tenantServiceProviderRepostory.GetProvider(tenant).GetService(type);
 
         }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TaaS.Providers
+namespace Arfilon.TaaS.Providers
 {
     class TenantServiceProxyProvider<TType> : ITenantServiceProvider<TType> where TType:class
     {

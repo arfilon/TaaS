@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.FileProviders;
 using System;
-using TaaS;
+using Arfilon.TaaS;
 
 namespace HelloWorld
 {
@@ -16,7 +16,7 @@ namespace HelloWorld
             this.environment = environment;
         }
 
-        public IWebHostEnvironment GetService(TaaS.TenantKey tenant)
+        public IWebHostEnvironment GetService(Arfilon.TaaS.TenantKey tenant)
         {
             return new TenantHostEnvironment(environment, tenant);
         }
@@ -25,7 +25,7 @@ namespace HelloWorld
         {
             private IWebHostEnvironment environment;
 
-            public TenantHostEnvironment(IWebHostEnvironment environment, TaaS.TenantKey tenant)
+            public TenantHostEnvironment(IWebHostEnvironment environment, Arfilon.TaaS.TenantKey tenant)
             {
                 this.environment = environment;
             }
