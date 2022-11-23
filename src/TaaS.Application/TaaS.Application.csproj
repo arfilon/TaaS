@@ -2,6 +2,18 @@
 
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>Tenant as a Service (TaaS)</Title>
+		<Authors>Mohammad Saleem</Authors>
+		<Company>Arfilon Solutions</Company>
+		<Product>TaaS</Product>
+		<Description>For Fast And Easy SaaS
+Convert your application to SaaS or multi-tenant</Description>
+		<Copyright>Arfilon Solutions</Copyright>
+		<PackageProjectUrl>https://github.com/arfilon/TaaS</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/arfilon/TaaS</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>SaaS, MultiTenancy</PackageTags>
 	</PropertyGroup>
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
