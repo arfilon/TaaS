@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
-using TaaS;
+using Arfilon.TaaS;
 
 namespace Lip
 {
-    internal class TenantSelector : TaaS.ITenantSelector
+    internal class TenantSelector : ITenantSelector
     {
         public TenantKey GetCurrentTenant(HttpContext httpContext)
         {
-            return new TenantKey("testtrtr");
+            return new TenantKey("testTenantKey");
         }
     }
 }

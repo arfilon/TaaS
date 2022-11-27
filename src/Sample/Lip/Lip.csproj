@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TaaS.Application\TaaS.Application.csproj" />
     <ProjectReference Include="..\MVC\MVC.csproj" />
   </ItemGroup>
 
