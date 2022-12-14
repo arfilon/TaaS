@@ -7,7 +7,7 @@ namespace HelloWorld
     {
         public TenantKey GetCurrentTenant(HttpContext httpContext)
         {
-            return new TenantKey("SSSaleem");
+            return new TenantKey("testTenantKey");
         }
     }
 }
