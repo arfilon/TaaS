@@ -24,19 +24,14 @@ namespace MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           services.AddMvc();
-            //services.AddTaaSApplication();
-            //services.AddSingleton<ITenantSelector, TenantSelector>();
-            ////services.AddControllersWithViews().AddApplicationPart(typeof(MVC.Controllers.HomeController).Assembly);
+            services.AddTaaSApplication();
+            services.AddSingleton<ITenantSelector, TenantSelector>();
 
-            //services.AddForEachTenant((s, t) =>
-            //{
-            //    //var mang = new ApplicationPartManager();
-            //    //mang.ApplicationParts.Add(new AssemblyPart(typeof(MVC.Controllers.HomeController).Assembly));
-            //    //s.AddSingleton<ApplicationPartManager>(mang);
-            //    s.AddControllers().AddApplicationPart(typeof(MVC.Controllers.HomeController).Assembly);
-    
-            //});
+            services.AddForEachTenant((s, t) =>
+            {
+                s.AddControllers();
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,34 +45,23 @@ namespace MVC
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseStaticFiles();
-
-            app.UseRouting();
-
-            // app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
+     
+            app.UseForEachTenant((t, a) =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                a.UseStaticFiles();
+
+                a.UseRouting();
+
+                a.UseAuthorization();
+
+                a.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllerRoute(
+                        name: "default",
+                        pattern: "{controller=Home}/{action=Index}/{id?}");
+                });
             });
-            //app.UseForEachTenant((t, a) =>
-            //{
-
-            //    a.UseStaticFiles();
-
-            //    a.UseRouting();
-
-            //    a.UseAuthorization();
-
-            //    a.UseEndpoints(endpoints =>
-            //    {
-            //        endpoints.MapControllerRoute(
-            //            name: "default",
-            //            pattern: "{controller=Home}/{action=Index}/{id?}");
-            //    });
-            //});
         }
     }
 }

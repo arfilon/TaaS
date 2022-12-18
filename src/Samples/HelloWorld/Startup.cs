@@ -12,7 +12,6 @@ namespace HelloWorld
         {
             services.AddTaaSApplication();
             services.AddSingleton<Arfilon.TaaS.ITenantSelector, TenantSelector>();
-            services.AddTenantServiceProvider<Microsoft.AspNetCore.Hosting.IWebHostEnvironment, WebHostEnvironmentProvider>();
             services.AddForEachTenant((s, t) =>
             {
                 s.AddRouting();

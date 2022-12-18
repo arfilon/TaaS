@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using System;
 using Arfilon.TaaS;
 using Arfilon.TaaS.Providers;
+using System.Reflection;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -17,10 +18,10 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddTenantServiceProxy<System.Diagnostics.DiagnosticListener>();
             services.AddTenantServiceProxy<Microsoft.Extensions.Hosting.IHostEnvironment>();
             services.AddTenantServiceProxy<Microsoft.AspNetCore.Hosting.IWebHostEnvironment>();
-            
-            services.AddTenantServiceProvider<AspNetCore.Mvc.ApplicationParts.ApplicationPartManager, ApplicationPartManagerProvider>();
+
             services.AddTenantServiceProvider<AspNetCore.Builder.IApplicationBuilder, TenantApplicationProvider>();
 
+            var callingAssembly = Assembly.GetCallingAssembly();
 
             services.AddForEachTenant((s, tenant) =>
             {
@@ -28,12 +29,11 @@ namespace Microsoft.Extensions.DependencyInjection
                 s.AddLogging();
                 s.AddOptions();
                 s.AddSingleton(tenant);
-
-                var mang = new ApplicationPartManager();
-                s.AddSingleton<ApplicationPartManager>(mang);
+                s.AddMvcCore().AddApplicationPart(callingAssembly);
             });
             return services;
         }
+
         public static IApplicationBuilder UseForEachTenant(this IApplicationBuilder app, Action<TenantKey, IApplicationBuilder> applicationBuilder)
         {
             var RootProvider = app.ApplicationServices;

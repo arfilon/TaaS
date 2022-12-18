@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Arfilon.TaaS;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MVC.Models;
 using System;
@@ -12,15 +13,17 @@ namespace MVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly TenantKey tenant;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,TenantKey tenant)
         {
             _logger = logger;
+            this.tenant = tenant;
         }
 
         public IActionResult Index()
         {
-            return new OkObjectResult("testttt");
+            return new OkObjectResult(tenant.Value);
         }
 
         public IActionResult Privacy()

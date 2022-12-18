@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using Arfilon.TaaS.Providers;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -28,7 +29,7 @@ namespace Microsoft.Extensions.DependencyInjection
         }
         public static IServiceCollection AddTenantServiceProvider<TService, TServiceProvider>(this IServiceCollection services) where TServiceProvider : class, ITenantServiceProvider<TService> where TService : class
         {
-            services.AddTransient<TServiceProvider>();
+            services.TryAddSingleton<TServiceProvider>();
             services.Configure<TenantAppsCollectionConfigration>(tl =>
             {
                 tl.AddProvider<TService, TServiceProvider>();
