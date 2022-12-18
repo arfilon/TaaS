@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Arfilon.TaaS
 {
     public interface ITenantSelector
     {
-        TenantKey GetCurrentTenant(Microsoft.AspNetCore.Http.HttpContext httpContext);
+        Task<TenantKey> GetCurrentTenant(Microsoft.AspNetCore.Http.HttpContext httpContext);
     }
 }

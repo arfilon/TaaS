@@ -1,4 +1,7 @@
 using BlazorApp1.Data;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,8 +14,8 @@ builder.Services.AddForEachTenant((s, t) =>
     s.AddServerSideBlazor();
     s.AddSingleton<WeatherForecastService>();
 });
-builder.Services.AddTenantServiceProxy<IHostApplicationLifetime>();
-builder.Services.AddTenantServiceProxy<IConfiguration>();
+builder.Services.AddTenantServiceProxy<Microsoft.Extensions.Hosting.IHostApplicationLifetime>();
+builder.Services.AddTenantServiceProxy<Microsoft.Extensions.Configuration.IConfiguration>();
 
 
 

@@ -1,14 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ApplicationIcon />
-    <OutputType>Exe</OutputType>
-    <StartupObject />
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ApplicationIcon />
+		<OutputType>Exe</OutputType>
+		<StartupObject />
+		<ImplicitUsings>disable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\TaaS.Application\Arfilon.TaaS.Application.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\TaaS.Application\Arfilon.TaaS.Application.csproj" />
+	</ItemGroup>
 
 </Project>

@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\MVC\MVC.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\MVC\MVC.csproj" />
+	</ItemGroup>
 
 </Project>

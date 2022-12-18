@@ -44,7 +44,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 return async (HttpContext h) =>
                 {
                     var Selector = h.RequestServices.GetRequiredService<ITenantSelector>();
-                    var tenant = Selector.GetCurrentTenant(h) ?? throw new TenantNotFoundException(h.Request.Host.Value);
+                    var tenant = await Selector.GetCurrentTenant(h) ?? throw new TenantNotFoundException(h.Request.Host.Value);
 
                     h.RequestServices = null;
 
